@@ -1,10 +1,11 @@
 import './App.css'
-import RandomNumber from './components/RandomNumber'
+import persons from './data/persons'
+import Person from './components/Person'
 
 function App() {
   return (
     <div className="App">
-      <RandomNumber maxNum={1000} />
+      <Person id={persons.id}/>
     </div>
   )
 }
