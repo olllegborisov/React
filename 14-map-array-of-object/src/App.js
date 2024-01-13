@@ -1,11 +1,10 @@
 import './App.css'
-import persons from './data/persons'
-import Person from './components/Person'
+import Persons from './components/Persons'
 
 function App() {
   return (
     <div className="App">
-      <Person id={persons.id}/>
+      <Persons />
     </div>
   )
 }

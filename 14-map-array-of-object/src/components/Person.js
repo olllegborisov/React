@@ -1,11 +1,14 @@
-import persons from '../data/persons'
-
-function Person({ id }) {
-  {
-    persons.map((person) => {
-      return <h1>{person.id}</h1>
-    })
-  }
+function Person(props) {
+  const { firstName, lastName, email, img } = props
+  return (
+    <div className="card">
+      <img src={img} />
+      <h3>
+        {firstName} {lastName}
+      </h3>
+      <h4>{email}</h4>
+    </div>
+  )
 }
 
 export default Person
