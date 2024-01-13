@@ -20,7 +20,7 @@ function App() {
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
-      <Reset />
+      <Reset resetCount={resetCount} count={count} />
     </div>
   )
 }

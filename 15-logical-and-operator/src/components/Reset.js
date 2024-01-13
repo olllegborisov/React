@@ -1,14 +1,15 @@
-import Button from '../components/Button'
-import App from '../App'
-
 const buttonStyle = { backgroundColor: 'lightgreen' }
 
-function Reset() {
-  count > 0 && (
+function Reset({ count, resetCount }) {
+  return (
     <div>
-      <button style={buttonStyle} onClick={resetCount}>
-        Reset
-      </button>
+      {count > 0 && (
+        <div>
+          <button style={buttonStyle} onClick={resetCount}>
+            Reset
+          </button>
+        </div>
+      )}
     </div>
   )
 }
