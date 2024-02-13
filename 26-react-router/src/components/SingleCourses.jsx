@@ -8,7 +8,7 @@ const SingleCourses = () => {
   const navigate = useNavigate()
   const location = useLocation()
   console.log(location)
-  const course = courses.find((course) => course.slug === params.courseSlag)
+  const course = courses.find((course) => course.slag === params.courseSlag)
   useEffect(() => {
     if (!course) {
       navigate('..', { relative: 'path' })
