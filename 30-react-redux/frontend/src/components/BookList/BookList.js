@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { deleteBook } from '../../redux/books/actionCreators'
 import './BookList.css';
 
 
@@ -13,7 +14,7 @@ const BookList = () => {
                 <ul>
                     {books.map((book, i) => (
                         <li key={book.id}>
-                            <div className="book-info">{++i}. {book.title} by <strong>{book.author}</strong></div>
+                            <div className="book-info">{++i}. {book.title} by <strong>{book.author}</strong><div className="book-actions"><button onClick={deleteBook} >Delete</button></div></div>
                         </li>
                     ))}
                 </ul>

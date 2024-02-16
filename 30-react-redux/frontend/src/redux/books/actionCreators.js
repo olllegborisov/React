@@ -6,3 +6,11 @@ export const addBook = (newBook) => {
         payload: newBook,
     }
 }
+
+export const deleteBook = (deleteBook) => {
+    return {
+        type: a.DELETE_BOOK,
+        payload: deleteBook,
+    }
+
+}
