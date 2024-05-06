@@ -1,6 +1,7 @@
 import './Post.css'
 
 function Post(props) {
+  console.log(props);
   const { id, title, userId, body } = props
   return (
     <div className="post">
