@@ -7,7 +7,6 @@ import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([])
-
   const addTodoHandler = (text) => {
     const newTodo = {
       text,
@@ -39,7 +38,6 @@ function App() {
   }
 
   const completedTodosCount = todos.filter((todo) => todo.isCompleted).length
-
   return (
     <div className="App">
       <h1>Todo form</h1>
