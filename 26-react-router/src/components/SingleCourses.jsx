@@ -8,6 +8,7 @@ import queryString from 'query-string'
 const SingleCourses = () => {
   const params = useParams()
   const navigate = useNavigate()
+<<<<<<< HEAD
   // const location = useLocation()
   // console.log(location)
   // console.log(location.search)
@@ -15,6 +16,11 @@ const SingleCourses = () => {
   // console.log(parsed)
 
   const course = courses.find((course) => course.slug === params.courseSlag)
+=======
+  const location = useLocation()
+  console.log(location)
+  const course = courses.find((course) => course.slag === params.courseSlag)
+>>>>>>> f870ec49cfa2539ade309c32871dfd37bf0d4f3d
   useEffect(() => {
     if (!course) {
       navigate('..', { relative: 'path' })

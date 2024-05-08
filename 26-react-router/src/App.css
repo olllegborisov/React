@@ -3,10 +3,7 @@
 }
 
 /* Used by default with NavLink (удобнее) */
-.active {
-  color: lightyellow;
-  text-decoration: none;
-}
+
 
 .activeLink {
   color: lightyellow;

@@ -13,7 +13,10 @@ const Menu = () => {
       >
         Home
       </NavLink>
-      <NavLink to="courses">Courses</NavLink>
+      <NavLink 
+        className={({ isActive }) => (isActive ? 'activeLink' : 'Link')}
+        to="courses">Courses
+        </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? 'activeLink' : 'Link')}
         to="about"
