@@ -48,34 +48,3 @@ const Courses = () => {
 
 export default Courses
 
-// import { Link, useLocation } from 'react-router-dom'
-// import courses from '../data/courses'
-// import queryString from 'query-string'
-
-// const Courses = () => {
-//   const location = useLocation()
-//   const parsed = queryString.parse(location.search)
-//   const parseValue = parsed.sort
-
-//   return (
-//     <div>
-//       {parseValue === 'title' ||
-//       parseValue === 'slag' ||
-//       parseValue === 'id' ? (
-//         <h1 style={{ textTransform: 'capitalize' }}>{parseValue}</h1>
-//       ) : (
-//         <h1>Courses</h1>
-//       )}
-
-//       {courses.map((course, index) => (
-//         <div key={index}>
-//           <Link to={course.slag} className="courseLink">
-//             {course[parseValue] || course.title}
-//           </Link>
-//         </div>
-//       ))}
-//     </div>
-//   )
-// }
-
-// export default Courses
