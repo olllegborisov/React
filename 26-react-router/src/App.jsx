@@ -5,9 +5,10 @@ import Contacts from './components/Contacts'
 import NotFound from './components/NotFound'
 import MainLayout from './layouts/MainLayout'
 import Courses from './components/Courses'
+import Info from './components/Info'
 import SingleCourses from './components/SingleCourses'
+import SingleInfo from './components/SingleInfo'
 import './App.css'
-
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
             <Route path="contacts" element={<Contacts />} />
             <Route path="courses" element={<Courses />} />
             <Route path="courses/:courseSlag" element={<SingleCourses />} />
+            <Route path="info" element={<Info />} />
+            <Route path="info/:infoSlag" element={<SingleInfo />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

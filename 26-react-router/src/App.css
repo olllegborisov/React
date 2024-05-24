@@ -4,7 +4,6 @@
 
 /* Used by default with NavLink (удобнее) */
 
-
 .activeLink {
   color: lightyellow;
   text-decoration: none;
@@ -43,4 +42,8 @@ button {
   margin: 20px;
   border: 0;
   cursor: pointer;
+}
+
+select {
+  margin-top: 15px;
 }
