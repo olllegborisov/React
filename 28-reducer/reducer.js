@@ -40,3 +40,4 @@ console.log(newState);
 newState = reducer(initialState, { type: 'ADD_NAME', payload: 'Alice' })
 console.log(newState);
 
+

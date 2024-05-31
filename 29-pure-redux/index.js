@@ -1,8 +1,8 @@
 import store from './redux/store.js'
 import { addCurrentTime, clearTimes } from './redux/actionCreators.js'
 
-const addTimeBtin = document.getElementById('addTime')
-addTimeBtin.addEventListener('click', () => store.dispatch(addCurrentTime())
+const addTimeBtn = document.getElementById('addTime')
+addTimeBtn.addEventListener('click', () => store.dispatch(addCurrentTime())
 )
 
 const clearTimesBtn = document.getElementById('clearTimes')
