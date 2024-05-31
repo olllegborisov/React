@@ -10,6 +10,7 @@ export const addBook = (newBook) => {
 export const deleteBook = () => {
     return {
         type: a.DELETE_BOOK,
+        payload: deleteBook(),
     }
 
 }
