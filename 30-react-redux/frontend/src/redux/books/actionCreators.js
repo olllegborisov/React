@@ -1,16 +1,19 @@
 import * as a from './actionTypes'
 
+
 export const addBook = (newBook) => {
+
     return {
         type: a.ADD_BOOK,
         payload: newBook,
     }
 }
 
-export const deleteBook = () => {
+export const deleteBook = (book) => {
+    console.log(book);
     return {
         type: a.DELETE_BOOK,
-        payload: deleteBook(),
+        payload: book,
     }
 
 }

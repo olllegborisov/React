@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { deleteBook } from '../../redux/books/actionCreators'
+import { deleteBook } from '../../redux/books/actionCreators';
 import './BookList.css';
 
 
@@ -12,10 +12,9 @@ const BookList = () => {
     //     console.log(element.id);
     // });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e, book) => {
         e.preventDefault()
-        dispatch(deleteBook())
-
+        dispatch(deleteBook(book))
 
     }
 
@@ -28,7 +27,7 @@ const BookList = () => {
                 <ul>
                     {books.map((book, i) => (
                         <li key={book.id}>
-                            <div className="book-info">{++i}. {book.title} by <strong>{book.author}</strong><div className="book-actions"><button onClick={handleSubmit} >Delete</button></div></div>
+                            <div className="book-info">{++i}. {book.title} by <strong>{book.author}</strong><div className="book-actions"><button onClick={(e) => handleSubmit(e, book)} >Delete</button></div></div>
                         </li>
                     ))}
                 </ul>
