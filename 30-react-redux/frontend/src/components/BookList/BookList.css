@@ -49,6 +49,7 @@
 .book-list .book-actions {
   display: flex;
   align-items: center;
+  justify-content: end;
 }
 
 .book-list .star-icon {
