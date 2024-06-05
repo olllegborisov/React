@@ -13,6 +13,11 @@ const BookForm = () => {
         e.preventDefault()
 
         if (title && author) {
+            // const book = {
+            //     title: title,
+            //     author: author,
+            //     id: uuidv4()
+            // }
             const book = {
                 title,
                 author,
