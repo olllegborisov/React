@@ -8,7 +8,7 @@ const BookForm = () => {
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const dispatch = useDispatch()
-    // consst [formData, setFormData] = useState({})
+    // const [formData, setFormData] = useState({})
     const handleSubmit = (e) => {
         e.preventDefault()
 

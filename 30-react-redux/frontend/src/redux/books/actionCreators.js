@@ -7,9 +7,10 @@ export const addBook = (newBook) => {
     }
 }
 
-export const deleteBook = () => {
+export const deleteBook = (book) => {
     return {
         type: a.DELETE_BOOK,
+        payload: book,
     }
 
 }

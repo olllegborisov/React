@@ -12,11 +12,8 @@ const BookList = () => {
     //     console.log(element.id);
     // });
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        dispatch(deleteBook())
-
-
+    const handleDeleteBook = (id) => {
+        dispatch(deleteBook(id))
     }
 
     return (
@@ -28,7 +25,11 @@ const BookList = () => {
                 <ul>
                     {books.map((book, i) => (
                         <li key={book.id}>
-                            <div className="book-info">{++i}. {book.title} by <strong>{book.author}</strong><div className="book-actions"><button onClick={handleSubmit} >Delete</button></div></div>
+                            <div className="book-info">{++i}. {book.title} by <strong>{book.author}</strong>
+                                <div className="book-actions">
+                                    <button onClick={(e) => handleDeleteBook(book.id)} >Delete</button>
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </ul>
