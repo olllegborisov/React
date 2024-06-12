@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { BsBookmarkStarFill, BsBookmarkStar } from "react-icons/bs";
-import { deleteBook, toggleFavorite } from '../../redux/books/actionCreators';
+import { deleteBook, toggleFavorite } from '../../redux/slices/booksSlice';
 import { selectTitleFilter, selectAuthorFilter, selectOnlyFavoriteFilter } from '../../redux/slices/filterSlice';
 import './BookList.css';
 
@@ -17,7 +17,6 @@ const BookList = () => {
     //     console.log(element.id);
     // });
 
-    console.log(onlyFavoriteFilter);
     const handleDeleteBook = (id) => {
         dispatch(deleteBook(id))
 
