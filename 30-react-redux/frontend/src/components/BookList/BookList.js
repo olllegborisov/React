@@ -66,7 +66,7 @@ const BookList = () => {
                 <ul>
                     {filteredBooks.map((book, i) => (
                         <li key={book.id}>
-                            <div className="book-info">{++i}. {hightLightMAtch(book.title, titleFilter)} by <strong>{hightLightMAtch(book.author, authorFilter)}</strong><div className="book-actions">
+                            <div className="book-info">{++i}. {hightLightMAtch(book.title, titleFilter)} by <strong>{hightLightMAtch(book.author, authorFilter)}</strong> ({book.source}) <div className="book-actions">
                                 <span onClick={() => handleToggleFavorite(book.id)}>
                                     {book.isFavorite ? (
                                         <BsBookmarkStarFill className="star-icon" />
