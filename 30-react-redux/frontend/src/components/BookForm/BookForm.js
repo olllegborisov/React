@@ -14,6 +14,7 @@ import './BookForm.css';
 const BookForm = () => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
+    const [publishing, setPublishing] = useState('')
     const isLoadingViaAPI = useSelector(selectIsLoadingViaAPI);
     const dispatch = useDispatch();
 
@@ -26,10 +27,11 @@ const BookForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (title && author) {
-            dispatch(addBook(createBookWithID({ title, author }, 'manual')));
+        if (title && author && publishing) {
+            dispatch(addBook(createBookWithID({ title, author, publishing }, 'manual')));
             setTitle('');
             setAuthor('');
+            setPublishing('');
         } else {
             dispatch(setError('You must fill title and author!'));
         }
@@ -59,6 +61,15 @@ const BookForm = () => {
                         id="author"
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="publishing">Publishing: </label>
+                    <input
+                        type="text"
+                        id="publishing"
+                        value={publishing}
+                        onChange={(e) => setPublishing(e.target.value)}
                     />
                 </div>
                 <button type="submit">Add Book</button>

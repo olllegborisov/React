@@ -66,14 +66,15 @@ const BookList = () => {
                 <ul>
                     {filteredBooks.map((book, i) => (
                         <li key={book.id}>
-                            <div className="book-info">{++i}. {hightLightMAtch(book.title, titleFilter)} by <strong>{hightLightMAtch(book.author, authorFilter)}</strong> ({book.source}) <div className="book-actions">
-                                <span onClick={() => handleToggleFavorite(book.id)}>
-                                    {book.isFavorite ? (
-                                        <BsBookmarkStarFill className="star-icon" />
-                                    ) : <BsBookmarkStar className="star-icon" />}
-                                    <button onClick={() => handleDeleteBook(book.id)} >Delete</button>
-                                </span>
-                            </div>
+                            <div className="book-info">{++i}. {hightLightMAtch(book.title, titleFilter)} by <strong>{hightLightMAtch(book.author, authorFilter)}</strong>. Publishing: <strong>{book.publishing}</strong> ({book.source})
+                                <div className="book-actions">
+                                    <span onClick={() => handleToggleFavorite(book.id)}>
+                                        {book.isFavorite ? (
+                                            <BsBookmarkStarFill className="star-icon" />
+                                        ) : <BsBookmarkStar className="star-icon" />}
+                                        <button onClick={() => handleDeleteBook(book.id)} >Delete</button>
+                                    </span>
+                                </div>
                             </div>
                         </li>
                     ))}
