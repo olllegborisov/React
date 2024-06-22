@@ -28,6 +28,7 @@ const BookForm = () => {
         e.preventDefault();
 
         if (title && author && publishing) {
+            console.log(publishing);
             dispatch(addBook(createBookWithID({ title, author, publishing }, 'manual')));
             setTitle('');
             setAuthor('');

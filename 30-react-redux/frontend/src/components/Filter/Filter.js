@@ -9,6 +9,7 @@ const Filter = () => {
     const titleFilter = useSelector(selectTitleFilter)
     const authorFilter = useSelector(selectAuthorFilter)
     const publishingFilter = useSelector(selectPublishingFilter)
+
     const onlyFavoriteFilter = useSelector(selectOnlyFavoriteFilter)
     const handleTitleFilterChange = (e) => {
         dispatch(setTitleFilter(e.target.value))

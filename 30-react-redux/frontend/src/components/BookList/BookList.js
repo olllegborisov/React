@@ -35,6 +35,7 @@ const BookList = () => {
         // if (onlyFavoriteFilter && book.isFavorite === !onlyFavoriteFilter) {
         //     return false
         // }
+
         const matchesFavorite = onlyFavoriteFilter ? book.isFavorite : true
         return matchesTitle && matchesAuthor && matchesPublishing && matchesFavorite
     })
@@ -68,7 +69,7 @@ const BookList = () => {
                 <ul>
                     {filteredBooks.map((book, i) => (
                         <li key={book.id}>
-                            <div className="book-info">{++i}. {console.log(book)}{hightLightMAtch(book.title, titleFilter)} by <strong>{hightLightMAtch(book.author, authorFilter)}</strong>. Publishing: <strong>{book.source === 'manual' ? hightLightMAtch(book.publishing, publishingFilter) : 'Not found'}</strong> ({book.source})
+                            <div className="book-info">{++i}.{hightLightMAtch(book.title, titleFilter)} by <strong>{hightLightMAtch(book.author, authorFilter)}</strong>. Publishing: <strong>{book.source === 'manual' ? hightLightMAtch(book.publishing, publishingFilter) : 'Not found'}</strong> ({book.source})
                                 <div className="book-actions">
                                     <span onClick={() => handleToggleFavorite(book.id)}>
                                         {book.isFavorite ? (
