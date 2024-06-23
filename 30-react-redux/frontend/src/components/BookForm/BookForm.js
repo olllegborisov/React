@@ -21,6 +21,9 @@ const BookForm = () => {
     const handleAddRandomBook = () => {
         const randomIndex = Math.floor(Math.random() * booksData.length);
         const randomBook = booksData[randomIndex];
+        console.log(randomBook);
+        randomBook.publishing = 'Not found'
+
         dispatch(addBook(createBookWithID(randomBook, 'random')));
     };
 

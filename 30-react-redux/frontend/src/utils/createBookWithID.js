@@ -6,7 +6,6 @@ const createBookWithID = (book, source) => {
         ...book,
         source,
         isFavorite: false,
-        publishing: 'Not found',
         id: uuidv4()
     }
 }

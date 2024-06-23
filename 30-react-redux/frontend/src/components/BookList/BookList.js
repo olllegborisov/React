@@ -31,7 +31,7 @@ const BookList = () => {
     const filteredBooks = books.filter((book) => {
         const matchesTitle = book.title.toLowerCase().includes(titleFilter.toLowerCase())
         const matchesAuthor = book.author.toLowerCase().includes(authorFilter.toLowerCase())
-        const matchesPublishing = book.source === 'manual' ? book.publishing.toLowerCase().includes(publishingFilter.toLowerCase()) : true
+        const matchesPublishing = book.publishing.toLowerCase().includes(publishingFilter.toLowerCase())
         // if (onlyFavoriteFilter && book.isFavorite === !onlyFavoriteFilter) {
         //     return false
         // }
@@ -69,7 +69,7 @@ const BookList = () => {
                 <ul>
                     {filteredBooks.map((book, i) => (
                         <li key={book.id}>
-                            <div className="book-info">{++i}.{hightLightMAtch(book.title, titleFilter)} by <strong>{hightLightMAtch(book.author, authorFilter)}</strong>. Publishing: <strong>{book.source === 'manual' ? hightLightMAtch(book.publishing, publishingFilter) : 'Not found'}</strong> ({book.source})
+                            <div className="book-info">{++i}.{hightLightMAtch(book.title, titleFilter)} by <strong>{hightLightMAtch(book.author, authorFilter)}</strong>. Publishing: <strong>{hightLightMAtch(book.publishing, publishingFilter)}</strong> ({book.source})
                                 <div className="book-actions">
                                     <span onClick={() => handleToggleFavorite(book.id)}>
                                         {book.isFavorite ? (
