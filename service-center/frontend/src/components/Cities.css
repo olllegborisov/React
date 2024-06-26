@@ -1,0 +1,63 @@
+.cities-wrapper {
+  margin-top: 50px;
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+}
+.cities-currentcity {
+  display: flex;
+  font-weight: 500;
+  font-size: 25px;
+  cursor: pointer;
+  position: relative;
+}
+.cities-currentcity::before,
+.cities-currentcity::after {
+  content: '';
+  position: absolute;
+  top: 23%;
+  right: -25px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  transition: all 0.3s ease-out;
+  background-color: #2468ff;
+  transform: translate(-3px, -50%) rotate(-45deg);
+}
+.cities-currentcity::before {
+  transform: translate(-3px, -50%) rotate(45deg);
+}
+.cities-currentcity::after {
+  transform: translate(3px, -50%) rotate(-45deg);
+}
+.cities-currentcity.active::before {
+  transform: translate(-3px, -50%) rotate(-45deg);
+}
+.cities-currentcity.active::after {
+  transform: translate(3px, -50%) rotate(45deg);
+}
+
+.cities-list {
+  position: absolute;
+  top: 100px;
+  height: 318px;
+  overflow: auto;
+}
+
+.cities-list::-webkit-scrollbar {
+  width: 0;
+}
+
+.cities-list-item {
+  list-style-type: none;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(199, 204, 209, 0.3764705882);
+  border-top: none;
+}
+.cities-list-item li {
+  border-top: 1px solid rgba(199, 204, 209, 0.3764705882);
+  font-size: 25px;
+  line-height: 34px;
+}
