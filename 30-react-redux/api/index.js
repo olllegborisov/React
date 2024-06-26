@@ -9,6 +9,7 @@ app.use(cors());
 function getRandomBook() {
     const randomIndex = Math.floor(Math.random() * booksData.length);
     const randomBook = booksData[randomIndex];
+    randomBook.publishing = 'Not found'
     return randomBook;
 }
 
