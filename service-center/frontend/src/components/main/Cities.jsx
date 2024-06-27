@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import cities from '../data/cities.json'
+import cities from '../../data/main/cities.json'
+import styles from './Cities.module.css'
 import './Cities.css'
+
 
 const Cities = () => {
     const [changeCity, setChangeCity] = useState(false)
@@ -12,7 +14,7 @@ const Cities = () => {
 
     const handleChangeCity = (e) => {
         setCity(e.target.textContent)
-        const currentCityElement = document.querySelector(".cities-currentcity");
+        const currentCityElement = document.querySelector(".currentcity");
         currentCityElement.textContent = e.target.textContent;
         currentCityElement.classList.add("active");
 
@@ -21,10 +23,10 @@ const Cities = () => {
 
 
     return (
-        <div className="cities-wrapper">
-            <span className="cities-currentcity" onClick={handleChangeBoolean}>
+        <div className={styles.wrapper}>
+            <span className="currentcity" onClick={handleChangeBoolean}>
                 {currentCity}</span>
-            <span className="cities-list" onClick={handleChangeBoolean}>{changeCity === true ? <ul className="cities-list-item">
+            <span className={styles.list} onClick={handleChangeBoolean}>{changeCity === true ? <ul className={styles.item}>
                 {cities.map((city, i) => {
                     return <li onClick={handleChangeCity} key={i}>{city}</li>
                 })}

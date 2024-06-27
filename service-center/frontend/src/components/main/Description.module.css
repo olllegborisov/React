@@ -1,0 +1,21 @@
+.background {
+    background: url(../../images/main/description/bg.webp);
+    background-size: cover;
+    background-position: center;
+    padding-top: 68px;
+    width: 155%;
+}
+.title {
+    font-size: 46px;
+    max-width: 761px;
+    line-height: 118%;
+}
+.text {
+    max-width: 595px;
+    font-weight: 400;
+    line-height: 34px;
+    padding-top: 35px;
+}
+button {
+   margin-top: 46px;
+}

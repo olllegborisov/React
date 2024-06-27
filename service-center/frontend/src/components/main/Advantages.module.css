@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 69px;
+
+}
+.title {
+    padding-top: 68px;
+}
+.item {
+    max-width: 368px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.subtitle {
+    font-size: 25px;
+    font-weight: 600;
+}
+.text {
+    margin-top: 20px;
+}

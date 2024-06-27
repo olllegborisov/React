@@ -1,0 +1,40 @@
+.wrapper {
+    padding-top:  67px;
+    margin-bottom: 40px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+    justify-content: space-between;
+    margin-bottom: 155px;
+}
+.titleWrapper {
+    padding-top:  67px;
+
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 363px;
+    border-radius: 12px;
+    padding: 40px 40px 13px 40px;
+    background: linear-gradient(117.79deg, #fff -22.73%, #d6dfff 126.83%);
+
+}
+.title {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 24.7px;
+    color: #2468ff;
+}
+.text {
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 31px;
+    margin-top: 25px;
+}

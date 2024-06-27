@@ -1,0 +1,13 @@
+.button {
+    outline: 0;
+    border: 0;
+    background: unset;
+    background-color: #2468ff;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    font-size: 28px;
+    padding: 27px 66px;
+    border-radius: 10px;
+    transition: box-shadow .1s ease-in-out, transform .05s ease-in;
+}

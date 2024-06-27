@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 133px;
+    width: 1426px;
+}
+.textGroup {
+    font-weight: 400;
+    font-size: 20.7px;
+    line-height: 34px;
+}
+.text:first-of-type {
+    padding-top: 8px;
+    width: 727px;
+}
+.text:last-of-type {
+    width: 760px;
+}
+.text {
+    margin-bottom: 48px;
+}
+.imageGroup {
+    display: flex;
+    flex-direction: column;
+    width: 569px;
+}
+.image {
+    margin-bottom: 21.97px;
+}

@@ -1,0 +1,55 @@
+.currentcity {
+  display: flex;
+  font-weight: 500;
+  font-size: 25px;
+  cursor: pointer;
+  position: relative;
+}
+@media (max-width: 1570px) {
+  .currentcity {
+    font-size: 1.59vw;
+  }
+}
+.currentcity::before,
+.currentcity::after {
+  content: '';
+  position: absolute;
+  top: 60%;
+  right: -25px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  transition: all 0.3s ease-out;
+  background-color: #2468ff;
+  transform: translate(-3px, -50%) rotate(-45deg);
+}
+.currentcity::before {
+  transform: translate(-3px, -50%) rotate(45deg);
+}
+.currentcity::after {
+  transform: translate(3px, -50%) rotate(-45deg);
+}
+.currentcity.active::before {
+  transform: translate(-3px, -50%) rotate(-45deg);
+}
+.currentcity.active::after {
+  transform: translate(3px, -50%) rotate(45deg);
+}
+@media (max-width: 1570px){
+  .currentcity::before,
+  .currentcity::after {
+    width: .64vw;
+    height: .13vw;
+    right: -2vw;
+    transform: translate(-.19vw, -50%) rotate(45deg);
+  }
+  .currentcity::after {
+    transform: translate(.19vw, -50%) rotate(-45deg);
+  }
+  .currentcity.active::before {
+    transform: translate(-.19vw, -50%) rotate(-45deg);
+  }
+  .currentcity.active::after {
+    transform: translate(.19vw, -50%) rotate(45deg);
+  }
+}
