@@ -8,16 +8,16 @@ const Order = () => {
   return (
     <div className={styles.order}>
         <div className={styles.titleWrapper}>
-            <h2 className={`${styles.title} container-box`}>
+            <h2 className={styles.title}>
                 Как мы ремонтируем
             </h2>
         </div>
-        <div className={`${styles.wrapper} container-box`}>
+        <div className={`${styles.wrapper} `}>
             <div className={styles.imageGroup}>
                 <img className={styles.image} src={image1} alt="call-центер" />
                 <img className={styles.image} src={image2} alt="шуруповёрт" />
             </div>
-            <div className={styles.listGroup}>
+            <div className={styles.listGroup} >
                 <img className={styles.listImg} src={list} alt="" />
                 <div className={styles.textWrapper}>
                     <div className={styles.textGroup}>
@@ -76,7 +76,6 @@ const Order = () => {
                 </div>
             </div>
         </div>
-
     </div>
   )
 }

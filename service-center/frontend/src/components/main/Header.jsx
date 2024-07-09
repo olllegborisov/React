@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react';
 import navigation from '../../data/main/navigation'
 import Cities from './Cities';
 import logo from '../../images/main/header/logo.svg'
@@ -7,12 +8,41 @@ import styles from './Header.module.css'
 
 
 const Header = () => {
-    const desktopVersion = useResize()
-    console.log(desktopVersion);
+    const apdaptive = useResize()
+    const [popUp, setPopUp] = useState(false)
+    const [crossAnimation, setCrossAnimation] = useState(false)
+    const [lineWidth, setLineWidth] = useState('')
+    const [lineTop, setLineTop] = useState('')
+
+    useEffect(() => {
+        if (apdaptive.isScreenSm === true && apdaptive.isScreenXs === false) {
+            setLineWidth('34px')
+            setLineTop('21px')
+        }
+        if (apdaptive.isScreenXs === true && apdaptive.isScreenSm === true) {
+            setLineWidth('20px')
+            setLineTop('23px')
+        }
+    }, [apdaptive.isScreenSm, apdaptive.isScreenXs])
+
+    const handleChangeBoolean = () => {
+        setPopUp(!popUp)
+        
+        if (popUp === false ) {
+            setCrossAnimation('true')
+
+        }
+        else {
+            setCrossAnimation(false)
+            
+        }
+
+    }
+
     return (
        
         <div className='app-header container-box'>
-            {desktopVersion.isScreenSm === true ? (
+            {apdaptive.isScreenL === true ? (
                 <>
                 <img className={styles.logo} src={logo} alt='logo' />
                     <nav className={styles.menu}>
@@ -25,8 +55,28 @@ const Header = () => {
                     <Cities /> 
                 </>
                     ) : (
-        <div>The mobile version will be here a bit late.</div> 
-        )}
+                <>
+                    <div className={styles.wrapperMobile}>
+                        <img className={styles.logo} src={logo} alt='logo' />
+                        <div className={styles.titleMobile}>
+                            <p>Официальный</p>
+                            <p>Сервисный&nbsp;центр </p>
+                        </div>
+                        <div className={styles.burger} onClick={handleChangeBoolean} >
+                            <span className={`${styles.line} `} style={crossAnimation === false ? null : { transform: 'scale(0)' } }></span>
+                            <span className={styles.line} style={crossAnimation === false ? null : { transform: 'rotate(45deg)', width: lineWidth, bottom: '24px' } }></span>
+                            <span className={styles.line} style={crossAnimation === false ? null : { transform: 'rotate(-45deg)', width: lineWidth, top: lineTop } }></span>
+                        </div> 
+                    </div>
+                    <nav className={styles.menuMobile} style={popUp === true ? {transform: 'translateY(0)'} : null }>
+                        <span className={styles.listMobile}>
+                            {navigation.map((nav, i) => {
+                                return <NavLink to={nav.translate} key={i}>{nav.title}</NavLink>
+                            })}
+                        </span>
+                    </nav>
+                </> 
+            )}
         </div>
     );
 
