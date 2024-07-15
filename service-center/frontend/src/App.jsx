@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Main from './components/main/Main';
 import Cities from './components/main/Cities';
 import MainLayout from './layouts/MainLayout';
+import './fonts/typography.css'
 import './App.css';
 
 

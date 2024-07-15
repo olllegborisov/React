@@ -1,6 +1,5 @@
 import advantages from '../../data/main/advantages'
 import styles from './Advantages.module.css'
-console.log(styles);
 
 const Advantages = () => {
     return (

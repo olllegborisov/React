@@ -2,6 +2,7 @@
   display: flex;
   width: 300px;
   justify-content: space-around;
+  background-color: #fff;
 }
 @media (max-width: 1500px) {
   .wrapper {
@@ -14,12 +15,21 @@
   top: 100px;
   height: 318px;
   overflow: auto;
-  background-color: #fff;
   text-align: center;
 }
 @media (max-width: 1570px) {
   .list {
     top: 7vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .list  {
+    top: 140vw;
+    width: 60.38vw;
+  }
+  .list li  {
+    background-color: #fff;
   }
 }
 
@@ -43,6 +53,12 @@
 @media (max-width: 1570px) {
   .item li {
     font-size: 1.59vw;
+  }
+}
+@media (max-width: 767px) {
+  .item li {
+    font-size: 5vw;
+    line-height: 7vw;
   }
 }
 

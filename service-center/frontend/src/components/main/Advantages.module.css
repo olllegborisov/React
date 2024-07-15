@@ -1,11 +1,42 @@
+
 .wrapper {
     display: flex;
     justify-content: space-between;
-    padding-top: 69px;
 
+}
+@media (max-width: 767px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 .title {
     padding-top: 68px;
+    text-align: left;
+    font-family: HelveticaNeueCyr;
+    font-size: 43px;
+    line-height: 42.48px;
+    padding-top: 68px;
+    margin-bottom: 69px;
+    padding-left: 9px;
+}
+@media (max-width: 1570px) {
+    .title {
+        font-size: 2.74vw;
+        line-height: 2.68vw;
+        padding-top: 4.33vw;
+        margin-bottom: 4.39vw;
+        padding-left: .57vw;
+    }
+}
+@media (max-width: 767px) {
+    .title {
+
+        font-size: 6.4vw;
+        padding-top: 11.33vw;
+        padding-left: 2vw;
+        margin-bottom: 12.39vw;
+    }
 }
 .item {
     max-width: 368px;
@@ -14,10 +45,66 @@
     text-align: center;
     align-items: center;
 }
-.subtitle {
-    font-size: 25px;
-    font-weight: 600;
+@media (max-width: 1570px) {
+    .item {
+        max-width: 23.44vw;
+    }
 }
+@media (max-width: 767px) {
+    .item {
+        max-width: 97.8vw;
+        margin-bottom: 8vw;
+    }
+}
+@media (max-width: 1570px) {
+    .item img {
+        width: 15.73vw;
+        margin-bottom: .76vw;
+    }
+}
+@media (max-width: 767px) {
+    .item img {
+        width: 57.73vw;
+        margin-bottom: 1.5vw;
+    }
+}
+.subtitle {
+    font-family: HelveticaNeueCyr;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 24.7px;
+    margin-bottom: 16px;
+}
+@media (max-width: 1570px) {
+    .subtitle {
+        font-size: 1.59vw;
+        line-height: 1.53vw;
+        margin-bottom: 1.02vw;
+    }
+}
+@media (max-width: 767px) {
+    .subtitle {
+        font-size: 4.59vw;
+        line-height: .53vw;
+        margin-bottom: 6.02vw;
+    }
+}
+
 .text {
-    margin-top: 20px;
+    font-family: HelveticaNeueCyr;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+}
+@media (max-width: 1570px) {
+    .text {
+        font-size: 1.27vw;
+        line-height: 2.17vw;
+    }
+}
+@media (max-width: 767px) {
+    .text {
+        font-size: 4.6vw;
+        line-height: 7.17vw;
+    }
 }

@@ -8,6 +8,20 @@ h2, h1, p {
 }
 body {
   font-size: 20px;
+  font-family: HelveticaNeueCyr;
+  font-weight: 400;
+}
+
+@media (max-width: 1570px) {
+  body {
+      font-size: 1.275vw;
+  }
+}
+
+.app {
+  position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 
@@ -33,11 +47,16 @@ body {
   height: 713px;
 }
 
-.app-title {
-  font-size: 43px;
-  line-height: 42.48px;
-  font-weight: 600;
+@media (max-width: 767px) {
+  .app-section {
+    padding-top: 5.5vw;
+  }
 }
+
+/* .app-title { */
+  /* line-height: 42.48px; */
+  /* font-weight: 600; */
+/* } */
 
 .container-box {
     max-width: 1592px;

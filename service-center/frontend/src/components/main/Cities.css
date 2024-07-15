@@ -8,6 +8,14 @@
 @media (max-width: 1570px) {
   .currentcity {
     font-size: 1.59vw;
+    padding: 0 1.56vw;
+  }
+}
+@media (max-width: 767px) {
+  .currentcity {
+    font-size: 5vw;
+    display: block;
+    margin-top: 5vw;
   }
 }
 .currentcity::before,
@@ -51,5 +59,23 @@
   }
   .currentcity.active::after {
     transform: translate(.19vw, -50%) rotate(45deg);
+  }
+}
+@media (max-width: 767px) {
+  .currentcity::after, .currentcity::before {
+      width: 2vw;
+      right: -2.32vw;
+      height: .33vw;
+      transform: translate(-.69vw, -50%) rotate(45deg);
+  }
+}
+@media (max-width: 767px) {
+  .currentcity::after {
+      transform: translate(.69vw, -50%) rotate(-45deg);
+  }
+}
+@media (max-width: 767px) {
+  .currentcity.active::after {
+      transform: translate(1.12vw, -50%) rotate(45deg);
   }
 }

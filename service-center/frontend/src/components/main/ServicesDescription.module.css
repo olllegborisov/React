@@ -1,8 +1,11 @@
+
 .wrapper {
     display: flex;
     justify-content: space-between;
     margin-bottom: 133px;
-    width: 1426px;
+    width: 1560px;
+    margin: 0 auto;
+
 }
 .textGroup {
     font-weight: 400;

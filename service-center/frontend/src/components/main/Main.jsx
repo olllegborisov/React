@@ -1,17 +1,17 @@
-// import Description from "./Description"
-// import Advantages from "./Advantages"
-// import Services from "./Services"
-// import ServicesDescription from "./ServicesDescription"
+import Description from "./Description"
+import Advantages from "./Advantages"
+import Services from "./Services"
+import ServicesDescription from "./ServicesDescription"
 // import Order from './Order'
 
 const Main = () => {
   return (
     <>
-        {/* <Description /> */}
-        {/* <Advantages />
+        <Description />
+         <Advantages />
         <Services />
         <ServicesDescription />
-        <Order /> */}
+         {/*<Order /> */}
     </>
   )
 }

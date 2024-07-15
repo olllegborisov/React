@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import navigation from '../../data/main/navigation'
 import Cities from './Cities';
 import logo from '../../images/main/header/logo.svg'
+import phone from '../../images/main/header/phone.svg'
 import { useResize } from '../../hooks/useResize';
 import styles from './Header.module.css'
 
@@ -69,11 +70,19 @@ const Header = () => {
                         </div> 
                     </div>
                     <nav className={styles.menuMobile} style={popUp === true ? {transform: 'translateY(0)'} : null }>
-                        <span className={styles.listMobile}>
-                            {navigation.map((nav, i) => {
-                                return <NavLink to={nav.translate} key={i}>{nav.title}</NavLink>
-                            })}
-                        </span>
+                        <div className={styles.listMobile}>
+                            <div className={styles.listWrapper}>
+                                {navigation.map((nav, i) => {
+                                    return <NavLink to={nav.translate} key={i}>{nav.title}</NavLink>
+                                })}
+                                
+                                <div className={styles.phoneWrapper}>
+                                    <img src={phone} alt="phone" />
+                                    <a className={styles.phoneNumber} href="tel: 78002223906">7 (800) 222-39-06 </a>
+                                </div>
+                                <Cities /> 
+                            </div>
+                        </div>
                     </nav>
                 </> 
             )}

@@ -4,7 +4,7 @@ import styles from './ServicesDescription.module.css'
 
 const ServicesDescription = () => {
   return (
-    <div className={`${styles.wrapper} container-box`}>
+    <div className={`${styles.wrapper}`}>
         <div className={styles.textGroup}>
             <p className={styles.text}>Наш сервисный центр не только предоставляет ремонтные услуги,
                 но и обеспечивает долгий срок службы вашего массажного оборудования. Мы понимаем, что 
