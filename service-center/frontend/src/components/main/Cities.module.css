@@ -28,9 +28,9 @@
     top: 140vw;
     width: 60.38vw;
   }
-  .list li  {
-    background-color: #fff;
-  }
+}
+.list li  {
+  background-color: #fff;
 }
 
 .list::-webkit-scrollbar {

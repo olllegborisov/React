@@ -1,18 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,  A11y } from 'swiper/modules';
+import { useResize } from "../../hooks/useResize"
+import services from "../../data/main/services"
+import styles from './Services.module.css'
 import 'swiper/css';
 import 'swiper/css/autoplay'
-import services from "../../data/main/services"
-import { useResize } from "../../hooks/useResize"
-import styles from './Services.module.css'
+
 
 
 
 const Services = () => {
 const apdaptive = useResize()
   return (
-
-    <div className={styles.services}>
+    <>
         {apdaptive.isScreenL === true ? (
             <div className="container-box">
                 <h2 className={`${styles.titleWrapper} app-title`}>
@@ -47,8 +47,7 @@ const apdaptive = useResize()
                     ))}
                 </Swiper>
             )}
-        </div>
-
+        </>
     )
 }
 

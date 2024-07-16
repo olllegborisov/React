@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { useResize } from '../../hooks/useResize';
 import navigation from '../../data/main/navigation'
 import Cities from './Cities';
 import logo from '../../images/main/header/logo.svg'
 import phone from '../../images/main/header/phone.svg'
-import { useResize } from '../../hooks/useResize';
 import styles from './Header.module.css'
 
 
