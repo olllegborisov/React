@@ -14,6 +14,11 @@
         height: 54.01vw;
     }
 }
+@media (max-width: 767px) {
+    .form2 {
+        height: 168.44vw;
+    }
+}
 .wrapper {
     display: flex;
     justify-content: space-between;
@@ -21,6 +26,11 @@
     position: relative;
     padding: 0 50px;
 
+}
+@media (max-width: 767px) {
+    .wrapper {
+        padding: 30px 3vw 0px 3vw;
+    }
 }
 .title {
     font-weight: 500;
@@ -36,6 +46,15 @@
         padding-top: 4.33vw;
     }
 }
+@media (max-width: 767px) {
+    .title {
+        text-align: center;
+        font-size: 6.55vw;
+        line-height: 6.25vw;
+        padding:  6.56vw 0px  0vw 0px  ;
+    }
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -49,6 +68,12 @@
         padding-top: 1.46vw;
     }
 }
+@media (max-width: 767px) {
+    .form {
+        max-width: 100vw;
+        padding-top: 5.63vw;
+    }
+}
 .image {
     width: 726.12px;
     height: 547.46px;
@@ -57,6 +82,11 @@
     .image {
         width: 46.24vw;
         height: 34.84vw;
+    }
+}
+@media (max-width: 767px) {
+    .image {
+        display: none;
     }
 }
 .input {
@@ -74,6 +104,15 @@
         margin-bottom: 1.59vw;
         padding-left: 1.53vw;
         font-size: 1.27vw;
+    }
+}
+@media (max-width: 767px) {
+    .input {
+        height: 15.63vw;
+        border-radius: 10px;
+        margin-bottom: 3.75vw;
+        padding-left: 6.25vw;
+        font-size: 4.38vw;
     }
 }
 .textarea {
@@ -96,9 +135,20 @@
         font-size: 1.27vw;
     }
 }
+@media (max-width: 767px) {
+    .textarea {
+        height: 39.69vw;
+        border-radius: 3.13vw;
+        padding-left: 6.25vw;
+        margin-bottom: 3.75vw;
+        padding-top: 5.63vw;
+        font-size: 4.38vw;
+    }
+}
 /* .checkbox {
     margin-bottom: 54px;
 } */
+
 
 
 .checkbox>input {
@@ -120,7 +170,13 @@
         font-size: 1.15vw;
         line-height: 1.59vw;
     }
-}
+    }
+    @media (max-width: 767px) {
+        .checkbox>span {
+            font-size: 3.75vw;
+            line-height: 5.94vw;
+        }
+    }
 
   .checkbox>span::before {
     content: '';
