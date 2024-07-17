@@ -10,6 +10,7 @@
     padding: 27px 66px;
     border-radius: 10px;
     transition: box-shadow .1s ease-in-out, transform .05s ease-in;
+    margin-top: 46px;
 }
 @media (max-width: 1570px){
     .button {
@@ -22,7 +23,7 @@
 @media (max-width: 767px) {
     .button {
         margin-top: 7.5vw;
-        font-size: 5.24vw;
+        font-size: 5.04vw;
         padding: 4.4vw 25.2vw;
         margin-left: 0;
         border-radius: 8px;

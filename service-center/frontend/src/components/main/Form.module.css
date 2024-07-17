@@ -2,6 +2,7 @@
     background: linear-gradient(117.79deg,#fff -22.73%,#d6dfff 126.83%);
     position: relative;
     height: 848px;
+    margin-top: 91px;
     
 }
 @media (max-width: 1920px) {
@@ -27,11 +28,17 @@
     padding: 0 50px;
 
 }
+
 @media (max-width: 767px) {
     .wrapper {
-        padding: 30px 3vw 0px 3vw;
+        padding: 5.63vw 3vw 0px 3vw;
     }
 }
+
+.wrapper div {
+    position: relative;
+}
+
 .title {
     font-weight: 500;
     font-size: 43px;
@@ -71,7 +78,6 @@
 @media (max-width: 767px) {
     .form {
         max-width: 100vw;
-        padding-top: 5.63vw;
     }
 }
 .image {
@@ -96,6 +102,13 @@
     margin-bottom: 25px;
     padding-left: 24px;
     font-size: 20px;
+    width: 100%;
+}
+.input:focus,
+.textarea:focus {
+    border: 2px solid rgb(108, 154, 253);
+    box-shadow: 0px 0px 10px 2px rgb(108, 154, 253);
+    outline:none
 }
 @media (max-width: 1570px) {
     .input {
@@ -124,6 +137,7 @@
     margin-bottom: 24px;
     padding-top: 25px;
     font-size: 20px;
+    width: 100%;
 }
 @media (max-width: 1570px) {
     .textarea {
@@ -192,6 +206,15 @@
     background-position: center center;
     background-size: 50% 50%;
   }
+    @media (max-width: 767px) {
+        .checkbox>span::before {
+            width: 6.25vw;
+            height: 6.25vw;
+            margin-right: 6.25vw;
+            border-radius: 2.1vw;
+            border: 1px solid #292d32;
+        }
+    }
   .checkbox._error>span::before {
     box-shadow: 0 0 15px red;
   }
@@ -229,4 +252,12 @@
     background-color: #e9ecef;
   }
 
-
+.error {
+    position: absolute;
+    bottom: 4px;
+    font-size: 16px;
+    color: rgb(255, 86, 86);
+}
+/* .inputError {
+    box-shadow: 0px 0px 10px 2px red;
+} */

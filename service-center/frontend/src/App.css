@@ -128,3 +128,7 @@ textarea::placeholder{
     align-self: unset;
   }
 } */
+
+.error {
+  border-color: red;
+}
