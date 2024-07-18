@@ -115,7 +115,6 @@ let renderCount = 0
                             message: 'Введенное значение не соответствует формату электронной почты'
                         }
                         })}  placeholder="E-mail"></input>
-                        {/* {validEmail ? <p style={{ color: 'green' }}>Email введен корректно</p> : <p style={{ color: 'red' }}>Пожалуйста, введите корректный email</p>} */}
                         <p className={styles.error}>{errors.email?.message}</p>
                     </div>
                     <div>
