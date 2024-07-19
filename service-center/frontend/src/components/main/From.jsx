@@ -11,7 +11,7 @@ import Button from './Button'
 
     const From = () => {
         const [isLoading, setIsLoading] = useState(false)
-        const [modalOpen, setModalOpen] = useState(true);
+        const [modalOpen, setModalOpen] = useState(false);
         const [orderID, setOrderID] = useState('')
         const {register, handleSubmit, reset,  formState: {errors}} = useForm()
 
