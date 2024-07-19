@@ -5,7 +5,7 @@ import Services from "./Services"
 import ServicesDescription from "./ServicesDescription"
 import Order from './Order'
 import From from "./From"
-import Faq from './Faq';
+// import Faq from './Faq';
 
 
 
@@ -22,7 +22,7 @@ const Main = () => {
         <Element name="form">
           <From />
         </Element>
-        <Faq />
+        {/* <Faq /> */}
     </>
   )
 }

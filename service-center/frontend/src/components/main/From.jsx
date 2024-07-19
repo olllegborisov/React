@@ -1,99 +1,81 @@
-import React from 'react'
 import {useForm} from 'react-hook-form'
+import { BiLoaderAlt } from "react-icons/bi";
+import { useState } from 'react'
+import { Backdrop } from '@material-ui/core';
+import Modal from '@material-ui/core/Modal';
 import styles from './Form.module.css'
 import image from '../../images/main/form/item.webp'
+import Logo from '../../images/main/svg/Logo';
+import Close from '../../images/main/svg/Close';
 import Button from './Button'
 
-
-let renderCount = 0
-
     const From = () => {
-        const {register, handleSubmit,  formState: {errors}} = useForm()
+        const [isLoading, setIsLoading] = useState(false)
+        const [modalOpen, setModalOpen] = useState(true);
+        const [orderID, setOrderID] = useState('')
+        const {register, handleSubmit, reset,  formState: {errors}} = useForm()
 
-        renderCount++
 
-
-
-
-        const onSubmit = async (data) => {
-        try {
-            const response = await fetch('https://ваш-сервер/конечная-точка-api', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-                // Добавьте любые другие заголовки по необходимости
-            },
-            body: JSON.stringify(data)
-            });
+        const handleModalOpen = () => {
+            setModalOpen(true);
+          };
         
-            if (response.ok) {
-            // Запрос прошел успешно
-            const responseData = await response.json();
-            console.log('Данные успешно отправлены:', responseData);
-            } else {
-            // Обработка ошибочного ответа
-            console.error('Ошибка отправки данных:', response.status, response.statusText);
+          const handleModalClose = () => {
+            setModalOpen(false);
+          };
+    
+        const onSubmit = async (data) => {
+            setIsLoading(true)
+            try {
+                const response = await fetch('https://olllegbo.isp29.admintest.ru/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+                });
+            
+                if (response.ok) {
+
+                // Запрос прошел успешно
+                const responseData = await response.json();
+                setOrderID(responseData.randomNumber)
+                console.log('Данные успешно отправлены:', responseData);
+
+                } else {
+                // Обработка ошибочного ответа
+                console.error('Ошибка отправки данных:', response.status, response.statusText);
+                }
+            } catch (error) {
+                console.error('Ошибка отправки данных:', error);
             }
-        } catch (error) {
-            console.error('Ошибка отправки данных:', error);
-        }
+            setIsLoading(false)
+            handleModalOpen();
+
+            reset()
         };
 
-        // const [formData, setFormData] = useState('')
-        // const [isLoading, setIsloading] = useState(false)
-        // const [username, setUsername] = useState('text')
-        // const [email, setEmail] = useState('');
-        // const [validEmail, setValidEmail] = useState(false);
-        // const API_URL = 'https://jsonplaceholder.typicode.com/posts'
-
-
-        // console.log(watch("example"))
-        
-
-        
-        // function handleFormSubmit(event) {
-        //     event.preventDefault()
-        //     const userData = {
-        //       username: event.target.username.value,
-        //       phone: event.target.phone.value,
-        //       email: event.target.email.value,
-        //       message: event.target.message.value,
-        //     }
-            
-        //     setFormData(userData) 
-        //     setUsername(userData.username)
-        //     setEmail(userData.email)
-
-        //     const isValidEmail = /\S+@\S+\.\S+/.test(email);
-        //     setValidEmail(isValidEmail);
-
-
-        //     // console.log(userData)
-        //     // alert(JSON.stringify(userData))
-        //     fetchData()
-        // }
-
-
-
-        // async function fetchData() {
-        //     setIsloading(true)
-
-        //     try {
-        //         const res = await fetch(API_URL)
-        //         const posts = await res.json()
-        //         console.log(posts);
-        //     } catch (error) {
-        //         console.log(error);
-        //     }
-        //     setIsloading(false)
-        // }
-
-
-
-        // console.log(formData);
-
   return (
-    <div className={styles.form2}>
+    <div className={styles.form2} >
+        
+        <Backdrop open={isLoading ? true : false } style={{zIndex: '50'}}/>
+
+        <Modal
+        open={modalOpen}
+        onClose={handleModalClose}
+        aria-labelledby="loading-modal"
+      >
+        <div className={styles.modal}>
+            <Close className={styles.modalClose} onClick={handleModalClose} />
+            <div className={styles.modalWrapper}>
+                <Logo className={styles.modallLogo} />
+                <span className={styles.modalTitle}>Спасибо!</span>
+                <span className={styles.modalTextID}>Номер вашей заявки: <span className={styles.modalID}>{orderID}</span></span>
+                <span className={styles.modalText}>Наш менеджер свяжется с вами в течение 30 минут</span>
+            </div>
+        </div>
+      </Modal>
+        <BiLoaderAlt className={styles.icon} style={isLoading ? {opacity: '1', visability: 'visible' } : {opacity: '0', visability: 'hidden'}}/> 
         <div className="container-box">
             <h2 className={styles.title}>Оформить заявку на ремонт</h2>
             <div  className={styles.wrapper}>
@@ -122,9 +104,12 @@ let renderCount = 0
                         <p className={styles.error}>{errors.message?.message}</p>
                     </div>
                     <label className={styles.checkbox}>
-                        <input type="checkbox"  value="value"/>
+                        <input type="checkbox"  {...register('checkbox', {required: 'Поле обязательно для заполнения'})}  value="value"/>
                         <span className={styles.checkboxText}><span href="/pages/personal-data.html">Я ознакомлен(а) с <span className="link">политикой конфиденциальности</span> и даю согласие на обработку персональных данных</span></span>
+                        <p style={{top: '100%'}} className={styles.error}>{errors.checkbox?.message}</p>
+
                     </label>
+
                     <div>
                         <Button />
                     </div>
@@ -133,11 +118,6 @@ let renderCount = 0
             </div>
 
         </div>
-        {/* {isLoading ? (
-        <h1>Loading...</h1>
-      ) : '' } */}
-      <p style={{marginLeft: '200px', marginTop: '50px'}}>{`Render Count: ${renderCount}`}</p>
-
     </div>
 
   )
