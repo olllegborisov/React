@@ -1,27 +1,27 @@
 const navigation = [
     {
         title: 'Главная',
-        translate: '.',
+        name: '.',
     },
     {
         title: 'Гарантия',
-        translate: 'guarantee',
+        name: 'guarantee',
     },
     {
         title: 'Доставка',
-        translate: 'delivery',
+        name: 'delivery',
     },
     {
         title: 'О нас',
-        translate: 'about',
+        name: 'about',
     },
     {
         title: 'Trade-in',
-        translate: 'trade-in',
+        name: 'trade-in',
     },
     {
         title: 'Контакты',
-        translate: 'contacts',
+        name: 'contacts',
     },
 ]
 

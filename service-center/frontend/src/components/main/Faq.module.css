@@ -4,6 +4,17 @@
     padding-top: 128px;
     margin-bottom: 120px;
 }
+@media (max-width: 1570px) {
+    .container {
+        padding-top: 8.41vw;
+    }
+}
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        padding-top: 18.75vw;
+    }
+}
 .title {
     font-weight: 500;
     font-size: 45px;
@@ -11,9 +22,35 @@
     margin-bottom: 70px;
     text-align: center;
 }
+@media (max-width: 1570px) {
+    .title {
+        font-size: 2.74vw;
+        line-height: 3.18vw;
+        margin-bottom: 4.46vw;
+    }
+}
+@media (max-width: 767px) {
+    .title {
+        text-align: start;
+        font-size: 6.25vw;
+        line-height: 5.94vw;
+        margin-bottom: 11.25vw;
+    }
+}
 .questionGroup {
     margin: 0 0 0 58px;
     padding-top: 7px;
+}
+@media (max-width: 1570px) {
+    .questionGroup {
+        margin: 0 0 0 3.69vw;
+        padding-top: 0vw;
+    }
+}
+@media (max-width: 767px) {
+    .questionGroup {
+        margin: 0 0 0 3.13vw;
+    }
 }
 .item {
     position: relative;
@@ -25,12 +62,35 @@
     width: 1027px;
     font-size: 26px;
 }
+@media (max-width: 1570px) {
+    .item {
+        font-size: 1.66vw;
+        width: 65.41vw;
+    }
+}
+@media (max-width: 767px) {
+    .item {
+        width: 95vw;
+    }
+}
 .question {
     padding-right: 20px;
     position: relative;
     font-weight: 600;
     font-size: 23.4px;
     padding: 35px 0 38px;
+}
+@media (max-width: 1570px) {
+    .question {
+        font-size: 1.46vw;
+    }
+}
+@media (max-width: 767px) {
+    .question {
+        font-size: 5vw;
+        line-height: 5.94vw;
+        max-width: 87vw;
+    }
 }
 .answer {
     font-style: normal;
@@ -42,4 +102,53 @@
     line-height: 25.2px;
     margin: 0px 0 22px;
     z-index: 2;
+}
+@media (max-width: 1570px) {
+    .answer {
+        font-size: 1.15vw;
+        margin: .89vw 0 1.4vw;
+        line-height: 1.59vw;
+    }
+}
+@media (max-width: 767px) {
+    .answer {
+        font-size: 4.38vw;
+        line-height: 7.19vw;
+        margin: 5vw 0 5.63vw;
+    }
+}
+
+.dropDownImgOn {
+    transform: rotate(270deg);
+    position: absolute;
+    top: 35px;
+    right: 0px;
+    transition: all .2s linear;
+}
+.dropDownImgOff {
+    transform: rotate(90deg);
+    position: absolute; 
+    top: 35px;
+    right: 0px;
+    transition: all .2s linear;
+}
+.mobile {
+    width: 20px;
+    height: 20px;
+
+}
+.dropDownOn {
+    opacity: 1;
+    transition: all .1s linear;
+    position: absolute;
+    background-color: #fff;
+    padding: 0px 0px 40px 0px;
+    border-bottom: 2px solid #e1eeff;
+    top: 100%;
+}
+.dropDownOff {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s linear;
 }

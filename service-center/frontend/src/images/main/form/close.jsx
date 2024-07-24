@@ -1,4 +1,4 @@
-const Close = ({className, onClick}) => {
+const close = ({className, onClick}) => {
   return (
     <svg  className={className} onClick={onClick} width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M31.382 19.1344L19.136 31.3804C18.7176 31.7988 18.0236 31.7988 17.6052 31.3804C17.1868 30.962 17.1868 30.2681 17.6052 29.8497L29.8513 17.6036C30.2697 17.1852 30.9636 17.1852 31.382 17.6036C31.8004 18.022 31.8004 18.716 31.382 19.1344Z" fill="#292D32"/>
@@ -8,4 +8,4 @@ const Close = ({className, onClick}) => {
   )
 }
 
-export default Close
+export default close

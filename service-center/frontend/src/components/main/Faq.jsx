@@ -1,17 +1,18 @@
 import { useState } from "react"
 import faqData from "../../data/main/faq"
 import styles from './Faq.module.css'
-import arrow from '../../images/main/faq/arrow-white.svg'
+import Arrow from '../../images/main/faq/Arrow';
+import { useResize } from "../../hooks/useResize"
 
 
 
 const Faq = () => {
-  const [visibilityIndex, setVisibilityIndex] = useState(null);
-
+  const [dropDownVisible, setdropDownVisible] = useState(null);
+  const apdaptive = useResize()
 
 
   const handleClick = (index) => {
-    setVisibilityIndex(visibilityIndex === index ? null : index);
+    setdropDownVisible(dropDownVisible === index ? null : index);
 
   }
   return (
@@ -21,36 +22,9 @@ const Faq = () => {
         <div className={styles.questionGroup}>
           {faqData.map((item, i) => ( 
             <div className={styles.item} key={i}  >
-                <img  style={ visibilityIndex === i 
-                  ? {
-                    transform: "rotate(90deg)",
-                    position: 'absolute',  
-                    top: '35px', 
-                    right: '0px', 
-                    transition: 'all .2s linear'
-                   } : {
-                    transform: "rotate(270deg)",
-                    position: 'absolute', 
-                    top: '35px', right: '0px', 
-                    transition: 'all .2s linear'
-                  } }  img src={arrow} alt="" />
-
+                <Arrow className={`${dropDownVisible === i ? styles.dropDownImgOn : styles.dropDownImgOff }  ${apdaptive.isScreenL === true ? styles.desktop : styles.mobile}`} />
                 <div className={styles.question} onClick={() => handleClick(i)}>{item.question}</div>
-                <p className={styles.answer} onClick={() => handleClick(i)} style={ visibilityIndex === i 
-                  ? {
-                    opacity: '1',
-                    transition: 'all .1s linear',
-                    position: 'absolute',
-                    backgroundColor: '#fff',
-                    padding: "0px 0px 40px 0px", 
-                    borderBottom: '2px solid #e1eeff',
-                    top: '100%'
-                  } : {
-                    position: 'absolute',
-                    opacity: '0',
-                    visibility: 'hidden',
-                    transition: 'all .2s linear'
-                  }  } >{item.answer}</p>
+                <p className={`${styles.answer} ${dropDownVisible === i ? styles.dropDownOn : styles.dropDownOff }`} onClick={() => handleClick(i)}>{item.answer}</p>
             </div>
           ))}
         </div>

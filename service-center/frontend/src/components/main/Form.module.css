@@ -29,15 +29,13 @@
       transform: rotate(360deg);
     }
   }
-
-
+  
 .wrapper {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
     position: relative;
     padding: 0 50px;
-
 }
 
 @media (max-width: 767px) {

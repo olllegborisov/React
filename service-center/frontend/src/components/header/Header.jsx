@@ -1,14 +1,16 @@
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useResize } from '../../hooks/useResize';
-import navigation from '../../data/main/navigation'
-import Cities from './Cities';
+import navigation from '../../data/navigation'
+import Cities from '../main/Cities';
+import contactsDetails from '../../data/footer/contactsDetails';
 import logo from '../../images/main/header/logo.svg'
 import phone from '../../images/main/header/phone.svg'
 import styles from './Header.module.css'
 
 
 const Header = () => {
+    console.log(contactsDetails);
     const apdaptive = useResize()
     const [popUp, setPopUp] = useState(false)
     const [crossAnimation, setCrossAnimation] = useState(false)
@@ -49,7 +51,7 @@ const Header = () => {
                     <nav className={styles.menu}>
                         <ul className={styles.list}>
                             {navigation.map((nav, i) => {
-                                return <NavLink to={nav.translate} key={i}>{nav.title}</NavLink>
+                                return <NavLink to={nav.name} key={i}>{nav.title}</NavLink>
                             })}
                         </ul>
                     </nav>
@@ -73,12 +75,12 @@ const Header = () => {
                         <div className={styles.listMobile}>
                             <div className={styles.listWrapper}>
                                 {navigation.map((nav, i) => {
-                                    return <NavLink to={nav.translate} key={i}>{nav.title}</NavLink>
+                                    return <NavLink to={nav.name} key={i}>{nav.title}</NavLink>
                                 })}
                                 
                                 <div className={styles.phoneWrapper}>
                                     <img src={phone} alt="phone" />
-                                    <a className={styles.phoneNumber} href="tel: 78002223906">7 (800) 222-39-06 </a>
+                                    <a className={styles.phoneNumber} href={contactsDetails[0].phoneLink}>{contactsDetails[0].phone}</a>
                                 </div>
                                 <Cities /> 
                             </div>

@@ -5,9 +5,10 @@ import { Backdrop } from '@material-ui/core';
 import Modal from '@material-ui/core/Modal';
 import styles from './Form.module.css'
 import image from '../../images/main/form/item.webp'
-import Logo from '../../images/main/svg/Logo';
-import Close from '../../images/main/svg/Close';
+import Logo from '../../images/main/form/logo';
+import Close from '../../images/main/form/close';
 import Button from './Button'
+import Submit from '../../utils/sending/Submit';
 
     const From = () => {
         const [isLoading, setIsLoading] = useState(false)
@@ -15,45 +16,18 @@ import Button from './Button'
         const [orderID, setOrderID] = useState('')
         const {register, handleSubmit, reset,  formState: {errors}} = useForm()
 
-
+        
         const handleModalOpen = () => {
             setModalOpen(true);
           };
         
-          const handleModalClose = () => {
+        const handleModalClose = () => {
             setModalOpen(false);
-          };
-    
-        const onSubmit = async (data) => {
-            setIsLoading(true)
-            try {
-                const response = await fetch('https://olllegbo.isp29.admintest.ru/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-                });
-            
-                if (response.ok) {
-
-                // Запрос прошел успешно
-                const responseData = await response.json();
-                setOrderID(responseData.randomNumber)
-                console.log('Данные успешно отправлены:', responseData);
-
-                } else {
-                // Обработка ошибочного ответа
-                console.error('Ошибка отправки данных:', response.status, response.statusText);
-                }
-            } catch (error) {
-                console.error('Ошибка отправки данных:', error);
-            }
-            setIsLoading(false)
-            handleModalOpen();
-
-            reset()
         };
+
+        const onSubmit = (data) => {
+               Submit(data, setIsLoading, setOrderID, reset, handleModalOpen);
+          };
 
   return (
     <div className={styles.form2} >
@@ -61,20 +35,21 @@ import Button from './Button'
         <Backdrop open={isLoading ? true : false } style={{zIndex: '50'}}/>
 
         <Modal
-        open={modalOpen}
-        onClose={handleModalClose}
-        aria-labelledby="loading-modal"
-      >
-        <div className={styles.modal}>
-            <Close className={styles.modalClose} onClick={handleModalClose} />
-            <div className={styles.modalWrapper}>
-                <Logo className={styles.modallLogo} />
-                <span className={styles.modalTitle}>Спасибо!</span>
-                <span className={styles.modalTextID}>Номер вашей заявки: <span className={styles.modalID}>{orderID}</span></span>
-                <span className={styles.modalText}>Наш менеджер свяжется с вами в течение 30 минут</span>
+            open={modalOpen}
+            onClose={handleModalClose}
+            aria-labelledby="loading-modal"
+        >
+            <div className={styles.modal}>
+                <Close className={styles.modalClose} onClick={handleModalClose} />
+                <div className={styles.modalWrapper}>
+                    <Logo className={styles.modallLogo} />
+                    <span className={styles.modalTitle}>Спасибо!</span>
+                    <span className={styles.modalTextID}>Номер вашей заявки: <span className={styles.modalID}>{orderID}</span></span>
+                    <span className={styles.modalText}>Наш менеджер свяжется с вами в течение 30 минут</span>
+                </div>
             </div>
-        </div>
       </Modal>
+
         <BiLoaderAlt className={styles.icon} style={isLoading ? {opacity: '1', visability: 'visible' } : {opacity: '0', visability: 'hidden'}}/> 
         <div className="container-box">
             <h2 className={styles.title}>Оформить заявку на ремонт</h2>
