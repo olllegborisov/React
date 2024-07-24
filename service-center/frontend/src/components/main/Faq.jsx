@@ -24,7 +24,7 @@ const Faq = () => {
             <div className={styles.item} key={i}  >
                 <Arrow className={`${dropDownVisible === i ? styles.dropDownImgOn : styles.dropDownImgOff }  ${apdaptive.isScreenL === true ? styles.desktop : styles.mobile}`} />
                 <div className={styles.question} onClick={() => handleClick(i)}>{item.question}</div>
-                <p className={`${styles.answer} ${dropDownVisible === i ? styles.dropDownOn : styles.dropDownOff }`} onClick={() => handleClick(i)}>{item.answer}</p>
+                <p className={`${styles.answer} ${dropDownVisible === i ? styles.dropDownOn : styles.dropDownOff }`} >{item.answer}</p>
             </div>
           ))}
         </div>
