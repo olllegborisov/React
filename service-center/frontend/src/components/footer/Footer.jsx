@@ -17,7 +17,7 @@ const Footer = () => {
             <Logo className={styles.logo} />
             <div className={styles.contactsWrapper}>
               <a className={styles.contactsPhone} href={contactsDetails[0].phoneLink}>{contactsDetails[0].phone}</a>
-              <a className={styles.webAdress} href={contactsDetails.webAdress}>yamaguchi-service-remont.ru</a>
+              <a className={styles.webAdress} href={contactsDetails[0].webAdress}>yamaguchi-service-remont.ru</a>
             </div>
             <div className={styles.sheduleWrapper}>
               <span>Пн-пт: 9.00-18.00</span>

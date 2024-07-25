@@ -1,0 +1,126 @@
+.container {
+    margin-bottom: 105px;
+}
+@media (max-width: 1570px) {
+    .after {
+        margin-bottom: 6.69vw;
+    }
+}
+@media (max-width: 767px) {
+    .after {
+        margin-bottom: 13.75vw;
+    }
+}
+.subtitle {
+    padding-top: 74px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 45px;
+    line-height: 55.35px;
+    margin-bottom: 72px;
+}
+@media (max-width: 1570px) {
+    .subtitle {
+        padding-top: 4.71vw;
+        font-size: 2.87vw;
+        line-height: 3.5vw;
+        margin-bottom: 4.59vw;
+    }
+}
+@media (max-width: 767px) {
+    .subtitle {
+        padding-top: 9.38vw;
+        font-size: 6.25vw;
+        line-height: 7.6875vw;
+        margin-bottom: 5.63vw;
+    }
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 767px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.item {
+    background: linear-gradient(117.79deg, #fff -22.73%, #d6dfff 126.83%);
+    box-shadow: 0 3px 25.2000007629px 0 rgba(0, 31, 111, .1098039216);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 363px;
+    height: 238px;
+}
+@media (max-width: 1570px) {
+    .item {
+        width: 23.12vw;
+        height: 15.16vw;
+    }
+}
+@media (max-width: 767px) {
+    .item {
+        width: 93.75vw;
+        height: 40vw;
+    }
+}
+.name {
+    color: #2468ff;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    font-size: 28px;
+    line-height: 35.28px;
+}
+@media (max-width: 1570px) {
+    .name {
+        margin-bottom: 1.15vw;
+        font-size: 1.78vw;
+        line-height: 2.23vw;
+    }
+}
+@media (max-width: 767px) {
+    .name {
+        margin-bottom: 4.38vw;
+        font-size: 4.69vw;
+        line-height: 4.63125vw;
+    }
+}
+.text {
+    line-height: 26.6px;
+    width: 327px;
+    padding: 9px 0px;
+}
+@media (max-width: 1570px) {
+    .text {
+        line-height: 1.66vw;
+        width: 20.83vw;
+    }
+}
+@media (max-width: 767px) {
+    .text {
+        font-size: 4.38vw;
+        line-height: 6.56vw;
+        width: 82.69vw;
+    }
+}
+.arrow {
+    width: 191px;
+}
+@media (max-width: 1570px) {
+    .arrow {
+        width: 12.17vw;
+    }
+}
+@media (max-width: 767px) {
+    .arrow {
+        width: 7.17vw;
+        padding-top: 3vw;
+    }
+}

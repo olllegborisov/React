@@ -10,7 +10,6 @@ import styles from './Header.module.css'
 
 
 const Header = () => {
-    console.log(contactsDetails);
     const apdaptive = useResize()
     const [popUp, setPopUp] = useState(false)
     const [crossAnimation, setCrossAnimation] = useState(false)
