@@ -6,7 +6,7 @@ import Cities from '../main/Cities';
 import contactsDetails from '../../data/footer/contactsDetails';
 import logo from '../../images/main/header/logo.svg'
 import phone from '../../images/main/header/phone.svg'
-import styles from './Header.module.css'
+import styles from '../../styles/header/Header.module.css'
 
 
 const Header = () => {

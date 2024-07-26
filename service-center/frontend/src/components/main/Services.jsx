@@ -2,9 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay,  A11y } from 'swiper/modules';
 import { useResize } from "../../hooks/useResize"
 import services from "../../data/main/services"
-import styles from './Services.module.css'
-import 'swiper/css';
+import styles from '../../styles/main/Services.module.css'
 import 'swiper/css/autoplay'
+import 'swiper/css';
+
 
 
 

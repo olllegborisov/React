@@ -133,4 +133,8 @@ textarea::placeholder{
   border-color: red;
 }
 
+.background {
+  background: linear-gradient(117.79deg, #fff -22.73%, #d6dfff 126.83%);
+}
+
 

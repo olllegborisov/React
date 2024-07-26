@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import cities from '../../data/main/cities.json'
-import styles from './Cities.module.css'
-import './Cities.css'
+import styles from '../../styles/main/Cities.module.css'
+import '../../styles/main/Cities.css'
 
 
 const Cities = () => {

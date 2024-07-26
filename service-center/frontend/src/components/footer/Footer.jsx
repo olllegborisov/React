@@ -5,7 +5,7 @@ import Mastercard from '../../images/main/footer/mastercard'
 import Logo from '../../images/main/footer/logo'
 import Visa from '../../images/main/footer/visa'
 import Mir from '../../images/main/footer/mir'
-import styles from './Footer.module.css'
+import styles from '../../styles/footer/Footer.module.css'
 
 const Footer = () => {
   

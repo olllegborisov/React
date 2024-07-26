@@ -70,6 +70,32 @@
         height: 40vw;
     }
 }
+.item:nth-of-type(3)>.text {
+    width: 321px;
+}
+@media (max-width: 1570px) {
+    .item:nth-of-type(3)>.text {
+        width: 20.45vw;
+    }
+}
+@media (max-width: 767px) {
+    .item:nth-of-type(3)>.text {
+        width: 77.5vw;
+    }
+}
+.item:nth-of-type(3) {
+    height: 296px;
+}
+@media (max-width: 1570px) {
+    .item:nth-of-type(3) {
+        height: 18.85vw;
+    }
+}
+@media (max-width: 767px) {
+    .item:nth-of-type(3) {
+        height: 56vw;
+    }
+}
 .name {
     color: #2468ff;
     letter-spacing: 1px;
@@ -108,19 +134,23 @@
         font-size: 4.38vw;
         line-height: 6.56vw;
         width: 82.69vw;
+        padding: 1vw 0px;
     }
 }
 .arrow {
     width: 191px;
+    margin-bottom: 72px;
 }
 @media (max-width: 1570px) {
     .arrow {
         width: 12.17vw;
+        margin-bottom: 4.59vw;
     }
 }
 @media (max-width: 767px) {
     .arrow {
         width: 7.17vw;
         padding-top: 3vw;
+        margin-bottom: 1.59vw;
     }
 }

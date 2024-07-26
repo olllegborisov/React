@@ -1,8 +1,9 @@
 import { useState } from "react"
 import faqData from "../../data/main/faq"
-import styles from './Faq.module.css'
 import Arrow from '../../images/shared/faq/Arrow';
 import { useResize } from "../../hooks/useResize"
+import styles from '../../styles/main/Faq.module.css'
+
 
 
 

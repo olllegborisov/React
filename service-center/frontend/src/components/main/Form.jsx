@@ -3,12 +3,14 @@ import { BiLoaderAlt } from "react-icons/bi";
 import { useState } from 'react'
 import { Backdrop } from '@material-ui/core';
 import Modal from '@material-ui/core/Modal';
-import styles from './Form.module.css'
 import image from '../../images/main/form/item.webp'
 import Logo from '../../images/main/form/logo';
 import Close from '../../images/main/form/close';
-import Button from './Button'
-import Submit from '../../utils/sending/Submit';
+import Button from '../../ui-components/Button';
+import Checkbox from '../../ui-components/Checkbox';
+import Submit from '../../utilities/sending/Submit';
+import styles from '../../styles/main/Form.module.css'
+
 
     const From = () => {
         const [isLoading, setIsLoading] = useState(false)
@@ -78,15 +80,10 @@ import Submit from '../../utils/sending/Submit';
                         <textarea  id="" cols="30" rows="10"  {...register('message', {required: 'Поле обязательно для заполнения'})} className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`} placeholder="Модель оборудования, симптомы поломки"></textarea>
                         <p className={styles.error}>{errors.message?.message}</p>
                     </div>
-                    <label className={styles.checkbox}>
-                        <input type="checkbox"  {...register('checkbox', {required: 'Поле обязательно для заполнения'})}  value="value"/>
-                        <span className={styles.checkboxText}><span href="/pages/personal-data.html">Я ознакомлен(а) с <span className="link">политикой конфиденциальности</span> и даю согласие на обработку персональных данных</span></span>
-                        <p style={{top: '100%'}} className={styles.error}>{errors.checkbox?.message}</p>
-
-                    </label>
-
+                        <Checkbox errors={errors} register={register} />
                     <div>
-                        <Button />
+                        
+                        <Button buttonText={'Оформить заявку'} />
                     </div>
                 </form>
                 <img className={styles.image} src={image} alt="нотубук" />

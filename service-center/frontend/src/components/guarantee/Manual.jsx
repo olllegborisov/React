@@ -1,5 +1,5 @@
 import guarantee from '../../data/guarantee/guarantee'
-import styles from './Manual.module.css'
+import styles from '../../styles/guarantee/Manual.module.css'
 const Manual = () => {
   return (
     <div className={`${styles.guarantee} container-box` }>

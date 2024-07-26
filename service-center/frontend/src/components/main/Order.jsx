@@ -4,7 +4,7 @@ import image2 from '../../images/main/order/item2.webp'
 import list from '../../images/main/order/list.svg'
 import listMobile from '../../images/main/order/list-mobile.svg'
 
-import styles from './Order.module.css'
+import styles from '../../styles/main/Order.module.css'
 
 const Order = () => {
   const apdaptive = useResize()

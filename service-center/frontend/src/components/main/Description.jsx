@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll'
-import Button from './Button'
-import styles from './Description.module.css'
+import Button from '../../ui-components/Button'
+import styles from '../../styles/main/Description.module.css'
 
 
 const Description = () => {
@@ -20,7 +20,7 @@ const Description = () => {
             offset={0} 
             duration={500} 
             >                                  
-                <Button />
+                <Button buttonText={'Оформить заявку'}/>
             </Link>
             </div>
             </div>

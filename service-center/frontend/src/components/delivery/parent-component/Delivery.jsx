@@ -1,5 +1,5 @@
-import DeliveryInfo from "./DeliveryInfo"
-import AfterRepair from "./AfterRepair"
+import DeliveryInfo from "../DeliveryInfo"
+import AfterRepair from "../AfterRepair"
 const Delivery = () => {
   return (
     <>

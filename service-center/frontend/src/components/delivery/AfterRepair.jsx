@@ -1,7 +1,8 @@
 import { useResize } from '../../hooks/useResize'
 import afterRepairData from '../../data/delivery/afterRepairData'
 import arrow from '../../images/delivery/arrow.svg'
-import styles from './AfterRepair.module.css'
+import arrowMob from '../../images/delivery/arrow-mob.svg'
+import styles from '../../styles/delivery/AfterRepair.module.css'
 
 const AfterRepair = () => {
     const adaptive = useResize()
@@ -24,7 +25,7 @@ const AfterRepair = () => {
                                 <span className={styles.text}>{item.text2}</span>
                             </>}
                         </div>
-                        {i === 2 ? <></> : <img className={`${styles.arrow} ${adaptive.isScreenSm ? styles.imageMobile : ''}`} src={arrow} alt='стрелка'/>}
+                        {i === 2 ? <></> : <img className={`${styles.arrow} ${adaptive.isScreenSm ? styles.imageMobile : ''}`} src={adaptive.isScreenSm ? arrowMob : arrow } alt='стрелка'/>}
                     </>
             )})}
         </div>

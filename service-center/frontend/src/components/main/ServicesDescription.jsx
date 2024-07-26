@@ -1,6 +1,6 @@
 import image1 from '../../images/main/serviceDescription/item1.webp'
 import image2 from '../../images/main/serviceDescription/item2.webp'
-import styles from './ServicesDescription.module.css'
+import styles from '../../styles/main/ServicesDescription.module.css'
 
 const ServicesDescription = () => {
   return (

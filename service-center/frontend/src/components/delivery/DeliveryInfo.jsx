@@ -1,5 +1,5 @@
 import image from '../../images/delivery/deliveryInfo/item.webp'
-import styles from './DeliveryInfo.module.css'
+import styles from '../../styles/delivery/DeliveryInfo.module.css'
 
 const DeliveryInfo = () => {
   return (

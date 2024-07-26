@@ -3,7 +3,7 @@ import { useResize } from '../../hooks/useResize'
 import text from '../../data/guarantee/text'
 import faq from '../../data/guarantee/faq'
 import Arrow from '../../images/shared/faq/Arrow'
-import styles from './Faq.module.css'
+import styles from '../../styles/guarantee/Faq.module.css'
 
 const Faq = () => {
   const [dropDownVisible, setdropDownVisible] = useState(null);

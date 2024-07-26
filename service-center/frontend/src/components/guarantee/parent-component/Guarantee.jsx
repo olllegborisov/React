@@ -1,5 +1,5 @@
-import Manual from './Manual'
-import Faq from './Faq'
+import Manual from '../Manual'
+import Faq from '../Faq'
 
 const Guarantee = () => {
   return (
