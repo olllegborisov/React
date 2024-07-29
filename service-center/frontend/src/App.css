@@ -138,3 +138,23 @@ textarea::placeholder{
 }
 
 
+
+.error {
+  position: absolute;
+  bottom: 0px;
+  font-size: 16px;
+  color: rgb(255, 86, 86);
+  z-index: 20;
+}
+
+.error2 {
+  position: absolute;
+  font-size: 16px;
+  color: rgb(255, 86, 86);
+  z-index: 20;
+}
+
+
+.inputWrapper, .wrapp {
+  position: relative;
+}

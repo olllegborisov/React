@@ -39,8 +39,8 @@ const apdaptive = useResize()
                     autoplay={true}
                     >
                     {services.map((item, i) => (
-                        <SwiperSlide>
-                            <div className={styles.item} key={i}>
+                        <SwiperSlide key={i}>
+                            <div className={styles.item} >
                                 <span className={styles.title}>{item.title}</span>
                                 <span className={styles.text}>{item.text}</span>
                             </div>

@@ -24,8 +24,8 @@
     }
     @media (max-width: 767px) {
         .checkbox>span {
-            font-size: 3.75vw;
-            line-height: 5.94vw;
+            font-size: 2.75vw;
+            line-height: 4.94vw;
         }
     }
 
@@ -61,9 +61,10 @@
             border: 1px solid #292d32;
         }
     }
-  .checkbox._error>span::before {
-    box-shadow: 0 0 15px red;
-  }
+
+    .checkbox._error>span::before {
+      box-shadow: 0 0 15px red;
+    }
 
   /* стили при наведении курсора на checkbox */
   .checkbox>input:not(:disabled):not(:checked)+span:hover::before {
@@ -97,14 +98,20 @@
   .checkbox>input:disabled+span::before {
     background-color: #e9ecef;
   }
+  
 
-  .error {
-    position: absolute;
-    bottom: 4px;
-    font-size: 16px;
-    color: rgb(255, 86, 86);
-    z-index: 20;
+.error2 {
+  position: absolute;
+  top:120%;
+  font-size: 16px;
+  color: rgb(255, 86, 86);
+  z-index: 20;
 }
-/* .inputError {
-    box-shadow: 0px 0px 10px 2px red;
-} */
+@media (max-width: 767px) {
+  .error2 {
+      top: 100%;
+      font-size: 3vw;
+  }
+}
+
+

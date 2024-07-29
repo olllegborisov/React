@@ -14,13 +14,14 @@ import styles from '../../styles/about/Order.module.css'
 import Checkbox from '../../ui-components/Checkbox'
 import Submit from '../../utilities/sending/Submit';
 
-
 const Order = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [orderID, setOrderID] = useState('')
     const [modalOpen, setModalOpen] = useState(false);
+    const [modalOpenFeedback, setModalOpenFeedback] = useState(false);
+
     const {register, handleSubmit, reset, formState: {errors}} = useForm()
-console.log(orderID);
+
     const handleModalOpen = () => {
         setModalOpen(true);
       };
@@ -28,9 +29,21 @@ console.log(orderID);
         setModalOpen(false);
     };
 
+    const handleModalOpenFeedback = () => {
+        setModalOpenFeedback(true);
+        setModalOpen(false);
+      };
+    const handleModalCloseFeedback = () => {
+        setModalOpenFeedback(false);
+    };
+    
+
     const onSubmit = (data) => {
-        Submit(data, setIsLoading, setOrderID, reset, handleModalOpen);
+        Submit(data, setIsLoading, setOrderID, reset, handleModalOpen, handleModalCloseFeedback, modalOpenFeedback);
    };
+
+   console.log(register);
+
 
 
 
@@ -59,23 +72,22 @@ console.log(orderID);
 
       <BiLoaderAlt className={styles.icon} style={isLoading ? {opacity: '1', visability: 'visible' } : {opacity: '0', visability: 'hidden'}}/> 
 
-
         <Modal
-            open={modalOpen}
-            onClose={handleModalClose}
+            open={modalOpenFeedback}
+            onClose={handleModalCloseFeedback}
             aria-labelledby="loading-modal"
         >
             <div className={styles.form}>
-                <Close className={styles.modalClose} onClick={handleModalClose} />
+                <Close className={styles.modalClose} onClick={handleModalCloseFeedback} />
                 <h2 className={styles.formSubtitle}>Заказать обратный звонок</h2>
                 <span className={styles.formText}>Введите имя и телефон и наш менеджер перезвонит Вам в течение 5 минут. Пожалуйста, не отключайте свой телефон</span>
                 <div className={styles.formWrapper}>
                     <form className={styles.form1}  onSubmit={handleSubmit(onSubmit)} action="#">
-                        <div>
+                        <div className={styles.inputWrapper}>
                             <input {...register('userName', {required: 'Поле обязательно для заполнения'})} className={styles.input}  placeholder='Ваше имя' />
                             <p className={styles.error}>{errors.userName?.message}</p>
                         </div>
-                        <div>
+                        <div className={styles.inputWrapper}>
                             <input  {...register('phone', {required: 'Поле обязательно для заполнения', minLength: {
                                 value: 4,
                                 message: 'Минимальная длина — 4 символа'
@@ -83,7 +95,7 @@ console.log(orderID);
                             <p className={styles.error}>{errors.phone?.message}</p>
                         </div>
                         <Checkbox register={register} errors={errors}/>
-                        <Button className={styles.formButton} buttonText={'Перезвонить мне'} />
+                        <Button  className={styles.formButton} buttonText={'Перезвонить мне'} />
                     </form>
                 </div>
             </div>
@@ -95,7 +107,7 @@ console.log(orderID);
                     <h2 className={styles.subtitle}>Помочь сделать выбор?</h2>
                     {adaptive.isScreenSm ? <img className={styles.img}src={imageMob} alt="мужчина"/> : <></> } 
                     <span className={styles.text}>Мы поможем Вам на видеоконсультации! Оставьте заявку и наш менеджер перезвонит Вам в течение 5 минут.</span>
-                    <Button buttonText={'Оформить заявку'} className={styles.button} onClick={handleModalOpen}/>
+                    <Button buttonText={'Оформить заявку'} className={styles.button} onClick={handleModalOpenFeedback}/>
                 </div>
                 {adaptive.isScreenSm ? <></> : <img className={styles.img}src={image} alt="мужчина"/>} 
 

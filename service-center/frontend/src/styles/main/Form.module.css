@@ -44,9 +44,6 @@
     }
 }
 
-.wrapper div {
-    position: relative;
-}
 
 .title {
     font-weight: 500;
@@ -137,37 +134,7 @@
         font-size: 4.38vw;
     }
 }
-.textarea {
-    border: 1px solid rgba(0, 0, 0, .3215686275);
-    resize: none;
-    height: 137px;
-    border-radius: 10px;
-    padding-left: 24px;
-    margin-bottom: 24px;
-    padding-top: 25px;
-    font-size: 20px;
-    width: 100%;
-}
-@media (max-width: 1570px) {
-    .textarea {
-        height: 8.73vw;
-        border-radius: .64vw;
-        padding-left: 1.53vw;
-        margin-bottom: 1.53vw;
-        padding-top: 1.59vw;
-        font-size: 1.27vw;
-    }
-}
-@media (max-width: 767px) {
-    .textarea {
-        height: 39.69vw;
-        border-radius: 3.13vw;
-        padding-left: 6.25vw;
-        margin-bottom: 3.75vw;
-        padding-top: 5.63vw;
-        font-size: 4.38vw;
-    }
-}
+
 
 
 
@@ -352,3 +319,4 @@
         height: 25vw;
     }
 }
+

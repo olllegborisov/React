@@ -9,7 +9,11 @@ import Close from '../../images/main/form/close';
 import Button from '../../ui-components/Button';
 import Checkbox from '../../ui-components/Checkbox';
 import Submit from '../../utilities/sending/Submit';
+import Input from '../../ui-components/Input';
+import TextArea from '../../ui-components/Textarea'
 import styles from '../../styles/main/Form.module.css'
+import stylesForm from '../../styles/form.module.css'
+
 
 
     const From = () => {
@@ -30,6 +34,7 @@ import styles from '../../styles/main/Form.module.css'
         const onSubmit = (data) => {
                Submit(data, setIsLoading, setOrderID, reset, handleModalOpen);
           };
+
 
   return (
     <div className={styles.form2} >
@@ -57,32 +62,23 @@ import styles from '../../styles/main/Form.module.css'
             <h2 className={styles.title}>Оформить заявку на ремонт</h2>
             <div  className={styles.wrapper}>
                 <form onSubmit={handleSubmit(onSubmit)} action="#" className={styles.form}>
-                    <div>
-                        <input {...register('userName', {required: 'Поле обязательно для заполнения'})} className={styles.input}  placeholder='Ваше имя' />
-                        <p className={styles.error}>{errors.userName?.message}</p>
-                    </div>
-                    <div>
-                        <input  {...register('phone', {required: 'Поле обязательно для заполнения', minLength: {
+                    <Input    register={register('userName', 
+                        {required: 'Поле обязательно для заполнения'})} errors={errors} placeholder={'Ваше имя'}/>
+                    <Input   register={register('phone', 
+                        {required: 'Поле обязательно для заполнения', minLength: {
                             value: 4,
                             message: 'Минимальная длина — 4 символа'
-                        }})} className={`${styles.input} ${errors.phone ? styles.inputError : ''}`} placeholder="Контактный телефон"/>
-                        <p className={styles.error}>{errors.phone?.message}</p>
-                    </div>
-                    <div>
-                        <input className={`${styles.input} ${errors.email ? styles.inputError : ''}`} {...register( 'email', {required: 'Поле обязательно для заполнения', pattern: {
+                    }})} errors={errors}  placeholder={'Контактный телефон'}/>
+                    <Input   register={register( 'email', 
+                        {required: 'Поле обязательно для заполнения', pattern: {
                             value: /\S+@\S+\.\S+/,
                             message: 'Введенное значение не соответствует формату электронной почты'
                         }
-                        })}  placeholder="E-mail"></input>
-                        <p className={styles.error}>{errors.email?.message}</p>
-                    </div>
+                        })} errors={errors}  placeholder={'E-mail'}/>
+                    <TextArea stylesForm={stylesForm}  register={register('message', 
+                        {required: 'Поле обязательно для заполнения'})} errors={errors} placeholder={'Модель оборудования, симптомы поломки'}/>
+                    <Checkbox stylesForm={stylesForm} className={styles.checkbox}  errors={errors} register={register}  />
                     <div>
-                        <textarea  id="" cols="30" rows="10"  {...register('message', {required: 'Поле обязательно для заполнения'})} className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`} placeholder="Модель оборудования, симптомы поломки"></textarea>
-                        <p className={styles.error}>{errors.message?.message}</p>
-                    </div>
-                        <Checkbox errors={errors} register={register} />
-                    <div>
-                        
                         <Button buttonText={'Оформить заявку'} />
                     </div>
                 </form>

@@ -4,6 +4,7 @@ import Main from './components/main/parent-component/Main';
 import Guarantee from './components/guarantee/parent-component/Guarantee';
 import Delivery from './components/delivery/parent-component/Delivery';
 import About from './components/about/parent-component/About';
+import TradeIn from './components/trade-in/parent-component/TradeIn';
 import PersonalData from './components/personal-data/PersonalData';
 import MainLayout from './layouts/MainLayout';
 import './fonts/typography.css'
@@ -22,6 +23,7 @@ function App() {
               <Route path="delivery" element={<Delivery />} />
               <Route path="about" element={<About />} />
               <Route path="personalData" element={<PersonalData />} />
+              <Route path="trade-in" element={<TradeIn />} />
             </Route>
           </Routes>
       </div>

@@ -1,5 +1,9 @@
-const Submit = async (data, setIsLoading, setOrderID, reset, handleModalOpen) => {
+const Submit = async (data, setIsLoading, setOrderID, reset, handleModalOpen, handleModalCloseFeedback, modalOpenFeedback) => {
     setIsLoading(true)
+    if (modalOpenFeedback) {
+        handleModalCloseFeedback()
+    }
+    
     try {
         const response = await fetch('https://olllegbo.isp29.admintest.ru/', {
         method: 'POST',
@@ -15,7 +19,6 @@ const Submit = async (data, setIsLoading, setOrderID, reset, handleModalOpen) =>
         const responseData = await response.json();
         setOrderID(responseData.randomNumber)
         console.log('Данные успешно отправлены:', responseData);
-
         } else {
         // Обработка ошибочного ответа
         console.error('Ошибка отправки данных:', response.status, response.statusText);
@@ -25,7 +28,6 @@ const Submit = async (data, setIsLoading, setOrderID, reset, handleModalOpen) =>
     }
     setIsLoading(false)
     handleModalOpen();
-
     reset()
 };
 
