@@ -46,18 +46,18 @@ import stylesForm from '../../styles/form.module.css'
             onClose={handleModalClose}
             aria-labelledby="loading-modal"
         >
-            <div className={styles.modal}>
-                <Close className={styles.modalClose} onClick={handleModalClose} />
-                <div className={styles.modalWrapper}>
-                    <Logo className={styles.modallLogo} />
-                    <span className={styles.modalTitle}>Спасибо!</span>
-                    <span className={styles.modalTextID}>Номер вашей заявки: <span className={styles.modalID}>{orderID}</span></span>
-                    <span className={styles.modalText}>Наш менеджер свяжется с вами в течение 30 минут</span>
+            <div className={stylesForm.modal}>
+                <Close className={stylesForm.modalClose} onClick={handleModalClose} />
+                <div className={stylesForm.modalWrapper}>
+                    <Logo className={stylesForm.modallLogo} />
+                    <span className={stylesForm.modalTitle}>Спасибо!</span>
+                    <span className={stylesForm.modalTextID}>Номер вашей заявки: <span className={styles.modalID}>{orderID}</span></span>
+                    <span className={stylesForm.modalText}>Наш менеджер свяжется с вами в течение 30 минут</span>
                 </div>
             </div>
       </Modal>
 
-        <BiLoaderAlt className={styles.icon} style={isLoading ? {opacity: '1', visability: 'visible' } : {opacity: '0', visability: 'hidden'}}/> 
+        <BiLoaderAlt className={stylesForm.icon} style={isLoading ? {opacity: '1', visability: 'visible' } : {opacity: '0', visability: 'hidden'}}/> 
         <div className="container-box">
             <h2 className={styles.title}>Оформить заявку на ремонт</h2>
             <div  className={styles.wrapper}>
@@ -79,10 +79,10 @@ import stylesForm from '../../styles/form.module.css'
                         {required: 'Поле обязательно для заполнения'})} errors={errors} placeholder={'Модель оборудования, симптомы поломки'}/>
                     <Checkbox stylesForm={stylesForm} className={styles.checkbox}  errors={errors} register={register}  />
                     <div>
-                        <Button buttonText={'Оформить заявку'} />
+                        <Button style123={{width: '100%'}} buttonText={'Оформить заявку'} />
                     </div>
                 </form>
-                <img className={styles.image} src={image} alt="нотубук" />
+                <img  className={styles.image} src={image} alt="нотубук" />
             </div>
 
         </div>

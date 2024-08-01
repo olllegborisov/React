@@ -7,8 +7,8 @@ import item3 from '../../images/trade-in/item3.webp'
 const TradeInDescription = () => {
   return (
     <>
-      <span className={styles.title}>Обновляться выгодно!</span>
-      <div className={styles.wrapper}>
+      <span className={styles.title}>Trade-In</span>
+      <div className={`${styles.wrapper} container-box`}>
         <div className={styles.item}>
           <div className={styles.textGroup}>
             <span className={styles.subtitle}>Обновляться выгодно!</span>
@@ -19,7 +19,7 @@ const TradeInDescription = () => {
             <span className={styles.highlightedText}>Уточняйте детали у наших менеджеров</span>
           </div>
           <div className={styles.imgWrapper}>
-            <img src={item1} alt="девушка" />
+            <img className={styles.img} src={item1} alt="девушка" />
           </div>
         </div>
         <div className={styles.item}>
@@ -29,10 +29,9 @@ const TradeInDescription = () => {
               обменять его на кресло YAMAGUCHI Xi. При этом вы заплатите намного меньше, чем указано на сайте — 
               мы вычтем актуальную стоимость старого кресла от цены нового.
             </p>
-            <span className={styles.highlightedText}>Уточняйте детали у наших менеджеров</span>
           </div>
           <div className={styles.imgWrapper}>
-            <img src={item2} alt="массажное кресло" />
+            <img className={styles.img} src={item2} alt="массажное кресло" />
           </div>
         </div>
         <div className={styles.item}>
@@ -48,7 +47,7 @@ const TradeInDescription = () => {
             </p>
           </div>
           <div className={styles.imgWrapper}>
-            <img src={item3} alt="массажные кресла" />
+            <img className={styles.img} src={item3} alt="массажные кресла" />
           </div>
         </div>
       </div>
